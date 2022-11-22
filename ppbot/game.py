@@ -5,11 +5,12 @@ import aiosqlite
 
 
 AVAILABLE_POINTS = [
-    "1", "2", "4", "8", "16",
-    "24", "32", "40", "❔", "☕",
+    "1", "2", "6", "8", "12",
+    "16", "20", "24", "28", "32",
+    "36", "40", "60", "❔", "☕",
 ]
 HALF_POINTS = len(AVAILABLE_POINTS) // 2
-ALL_MARKS = "♥♦♠♣"
+ALL_MARKS = "✅"
 
 
 class Vote:
