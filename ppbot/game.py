@@ -55,6 +55,7 @@ class Game:
         self.reply_message_id = 0
         self.votes = collections.defaultdict(Vote)
         self.revealed = False
+        self.avg = 0
 
     def add_vote(self, initiator, point):
         self.votes[self._initiator_str(initiator)].set(point)
@@ -70,8 +71,12 @@ class Game:
                     vote.point if self.revealed else vote.masked, user_id
                 )
                 for user_id, vote in sorted(self.votes.items())
-            )
+            ) 
+            for user_id, vote in self.votes.items():
+                self.avg += int(vote.point) 
             result += "\n\nCurrent votes:\n{}".format(votes_str)
+            if self.revealed:
+                result += "\n\nAverage:\n{}".format(self.avg / len(self.votes))
         return result
 
     def get_send_kwargs(self):
