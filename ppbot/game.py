@@ -10,7 +10,7 @@ AVAILABLE_POINTS = [
     "32", "36", "40", "❔", "☕",
 ]
 HALF_POINTS = len(AVAILABLE_POINTS) // 2
-ALL_MARKS = "✅"
+ALL_MARKS = "✅✔️"
 
 
 class Vote:
